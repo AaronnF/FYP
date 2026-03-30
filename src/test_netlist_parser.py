@@ -26,17 +26,31 @@ def _bits_to_str(bits: List[int], order: str) -> str:
 
 def _read_vectors_txt(path: str, ports_order: List[str]) -> List[Tuple[Dict[str, str], Dict[str, str]]]:
     vectors: List[Tuple[Dict[str, str], Dict[str, str]]] = []
+    rows: List[List[str]] = []
     with open(path, "r") as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
-            parts = line.split()
-            if len(parts) != len(ports_order):
-                raise ValueError(f"Unexpected line format: {line}")
+            rows.append(line.split())
+
+    # Standard format: one row contains all ports.
+    if all(len(parts) == len(ports_order) for parts in rows):
+        for parts in rows:
             mapping = dict(zip(ports_order, parts))
             vectors.append((mapping, {}))
-    return vectors
+        return vectors
+
+    # Two-line pair format (common for large vectors): input line then output line.
+    if len(ports_order) == 2 and all(len(parts) == 1 for parts in rows) and len(rows) % 2 == 0:
+        p_in, p_out = ports_order[0], ports_order[1]
+        for i in range(0, len(rows), 2):
+            mapping = {p_in: rows[i][0], p_out: rows[i + 1][0]}
+            vectors.append((mapping, {}))
+        return vectors
+
+    bad = " | ".join(" ".join(parts) for parts in rows[:3])
+    raise ValueError(f"Unexpected txt vector format. Sample rows: {bad}")
 
 
 def _read_vectors_csv(path: str) -> List[Tuple[Dict[str, str], Dict[str, str]]]:

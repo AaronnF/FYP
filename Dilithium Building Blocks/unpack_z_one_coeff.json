@@ -1,0 +1,168 @@
+{
+  "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 17.0.0 -fPIC -O3)",
+  "modules": {
+    "unpack_z_one_coeff": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:11.1-25.10"
+      },
+      "ports": {
+        "packed_z": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+        },
+        "unpacked_z": {
+          "direction": "output",
+          "bits": [ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ]
+        }
+      },
+      "cells": {
+        "$gt$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$1": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000011000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.22-22.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+            "B": [ "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 44 ]
+          }
+        },
+        "$sub$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$3": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000011000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010010",
+            "Y_WIDTH": "00000000000000000000000000011000"
+          },
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.48-22.74"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1" ],
+            "B": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+            "Y": [ 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ]
+          }
+        },
+        "$sub$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$4": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000011000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010010",
+            "Y_WIDTH": "00000000000000000000000000011000"
+          },
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.77-22.99"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+            "Y": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ]
+          }
+        },
+        "$ternary$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$5": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000011000"
+          },
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.21-22.99"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ],
+            "B": [ 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "S": [ 44 ],
+            "Y": [ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ]
+          }
+        }
+      },
+      "netnames": {
+        "$gt$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$1_Y": {
+          "hide_name": 1,
+          "bits": [ 44 ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.22-22.44"
+          }
+        },
+        "$sub$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$3_Y": {
+          "hide_name": 1,
+          "bits": [ 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.48-22.74"
+          }
+        },
+        "$sub$Dilithium$20Building$20Blocks/unpack_z_one_coeff.v:22$4_Y": {
+          "hide_name": 1,
+          "bits": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:22.77-22.99"
+          }
+        },
+        "GAMMA_LIMIT": {
+          "hide_name": 0,
+          "bits": [ "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:17.13-17.24"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "0" ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:16.13-16.14"
+          }
+        },
+        "packed_z": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:12.18-12.26"
+          }
+        },
+        "unpacked_z": {
+          "hide_name": 0,
+          "bits": [ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
+          "attributes": {
+            "src": "Dilithium Building Blocks/unpack_z_one_coeff.v:13.19-13.29"
+          }
+        }
+      }
+    }
+  }
+}

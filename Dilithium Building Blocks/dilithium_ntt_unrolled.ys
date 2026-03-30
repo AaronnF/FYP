@@ -1,0 +1,6 @@
+read_verilog -sv "Dilithium Building Blocks/dilithium_ntt_unrolled_kamal.v"
+hierarchy -check -top dilithium_ntt_unrolled
+proc
+opt
+clean
+write_json "Dilithium Building Blocks/dilithium_ntt_unrolled.json"

@@ -1,0 +1,7 @@
+read_verilog -sv "Dilithium Building Blocks/invntt_256_comb.v"
+hierarchy -check -top invntt_256_comb
+proc
+opt
+flatten
+opt_clean
+write_json "Dilithium Building Blocks/invntt_256_comb.json"
