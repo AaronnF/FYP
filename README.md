@@ -185,3 +185,7 @@ python src/test_netlist_parser.py \
 - The parser automatically detects port bit ordering from the best-matching vector interpretation.
 - `component_metrics.py` is a convenience wrapper around `tools/measure_component_metrics.py`.
 - The repository is organized for reproducibility rather than arbitrary Verilog support.
+
+## Acknowledgements
+
+The Verilog hardware modules (`.v` files) used in this repository were provided by Kamal Raj (GitHub: kamlarajnegi).
